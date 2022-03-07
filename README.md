@@ -11,7 +11,7 @@ This project was initialized by using https://code.quarkus.io, including: `kogit
 
 There are two integration tests in the src/test/java/org/acme folder:
 * `PricingTest.java` is the default test that was created during project initialization, I've left it here for reference
-* `CucumberRunnerTest.jaga` is the cucumber runner that will kick off the tests.
+* `CucumberRunnerTest.java` is the cucumber runner that will kick off the tests.
 
 These tests can be executed from the command line using:
 ```shell script
