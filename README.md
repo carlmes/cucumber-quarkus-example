@@ -7,6 +7,19 @@ This is a the Kogito Quarkus default project that has been enhanced to use Cucum
 
 This project was initialized by using https://code.quarkus.io, including: `kogito-quarkus-decisions`, `quarkus-resteasy-jackson`, `quarkus-kubernetes`, `quarkus-container-image-jib`.
 
+## Running tests
+
+There are two integration tests in the src/test/java/org/acme folder:
+* `PricingTest.java` is the default test that was created during project initialization, I've left it here for reference
+* `CucumberRunnerTest.jaga` is the cucumber runner that will kick off the tests.
+
+These tests can be executed from the command line using:
+```shell script
+mvn clean test
+```
+
+Or if using an IDE such as Visual Studio Code, can be run directly from within the IDE using the "run" button/link.
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
