@@ -5,6 +5,8 @@ This is a the Kogito Quarkus default project that has been enhanced to use Cucum
 * Cucumber Quarkus implementation here: https://github.com/quarkiverse/quarkus-cucumber
 * Documentation here: https://quarkiverse.github.io/quarkiverse-docs/quarkus-cucumber/dev/index.html
 
+This project was initialized by using https://code.quarkus.io, including: `kogito-quarkus-decisions`, `quarkus-resteasy-jackson`, `quarkus-kubernetes`, `quarkus-container-image-jib`.
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -47,6 +49,24 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+
+## Serverless Execution on OpenShift
+
+You can make a Serverless DMN just by applying the small config required from Quarkus point of view:
+
+The following content has been added to the `application.properties` file: 
+```
+quarkus.container-image.registry=quay.io 
+quarkus.container-image.group=carl_mes 
+
+quarkus.kubernetes.deployment-target=knative
+```
+
+To deploy on OpenShift (that has the Serverless operator available), execute the following commands:
+```
+mvn clean package -Dquarkus.container-image.push=true 
+oc apply -f target/kubernetes/knative.yml 
+```
 
 ## Related Guides
 
