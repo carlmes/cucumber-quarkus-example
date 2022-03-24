@@ -1,4 +1,4 @@
-# code-with-quarkus Project
+# Cucumer Quarkus Example Project
 
 This is a the Kogito Quarkus default project that has been enhanced to use Cucumber.
 
